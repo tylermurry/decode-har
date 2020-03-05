@@ -1,0 +1,25 @@
+{
+  "name": "decode-har",
+  "version": "1.0.0",
+  "description": "Decodes responses inside of a HAR file for easily manipulation. Purpose built to assist with PollyJS captures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "decodehar": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylermurry/decode-har.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylermurry/decode-har/issues"
+  },
+  "homepage": "https://github.com/tylermurry/decode-har#readme",
+  "dependencies": {
+    "node-gzip": "^1.1.2"
+  }
+}
