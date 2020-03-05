@@ -38,7 +38,8 @@ function getChunksFromBody(body, headers) {
 }
 
 const run = async () => {
-  const harFile = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+  const harPath = process.argv[2];
+  const harFile = JSON.parse(fs.readFileSync(harPath, 'utf8'));
 
   for (const [index, entry] of harFile.log.entries.entries()) {
     const headers = entry.response.headers;
@@ -53,9 +54,9 @@ const run = async () => {
     harFile.log.entries[index].response.content.text = content.toString('utf8');
   }
 
-  fs.writeFileSync('recording.har.decoded', JSON.stringify(harFile, null, 2), 'utf8');
+  fs.writeFileSync(`${harPath}.decoded`, JSON.stringify(harFile, null, 2), 'utf8');
 
-  console.log('Successfully decoded file to recording.har.decoded');
+  console.log(`Successfully decoded file to ${harPath}.decoded`);
 };
 
 run();
